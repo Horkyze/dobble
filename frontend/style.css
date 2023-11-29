@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#gameArea {
+    display: none;
+}
+
+#playerArea,
+#deckArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.symbol {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.symbol:hover {
+    transform: scale(1.1);
+}
+
+/* Add other styles as needed */
+
+.symbol.position-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-2 {
+    top: calc(50% + 40% * sin(0));
+    left: calc(50% + 40% * cos(0));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-3 {
+    top: calc(50% + 40% * sin(1 * (2*pi/7)));
+    left: calc(50% + 40% * cos(1 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-4 {
+    top: calc(50% + 40% * sin(2 * (2*pi/7)));
+    left: calc(50% + 40% * cos(2 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-5 {
+    top: calc(50% + 40% * sin(3 * (2*pi/7)));
+    left: calc(50% + 40% * cos(3 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-6 {
+    top: calc(50% + 40% * sin(4 * (2*pi/7)));
+    left: calc(50% + 40% * cos(4 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-7 {
+    top: calc(50% + 40% * sin(5 * (2*pi/7)));
+    left: calc(50% + 40% * cos(5 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
+
+.symbol.position-8 {
+    top: calc(50% + 40% * sin(6 * (2*pi/7)));
+    left: calc(50% + 40% * cos(6 * (2*pi/7)));
+    transform: translate(-50%, -50%);
+}
