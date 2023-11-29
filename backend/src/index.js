@@ -51,8 +51,21 @@ io.on('connection', (socket) => {
 
     socket.on('start-game', (roomName) => {
         if (rooms[roomName]) {
-            rooms[roomName].currentCard = rooms[roomName].deck.pop();
-            io.to(roomName).emit('new-card', rooms[roomName].currentCard);
+            if (rooms[roomName].currentCard == null) {
+                rooms[roomName].currentCard = rooms[roomName].deck.pop();
+                
+                // new card in the middle
+                io.to(roomName).emit('new-card', rooms[roomName].currentCard);
+                
+                // distibute cards to players
+                cards = {}
+                for (player in rooms[roomName].players) {
+                    cards[player] = rooms[roomName].deck.pop()
+                }
+                io.to(roomName).emit('player-cards', cards);
+                
+                rooms[roomName].players
+            }
         }
     });
 
