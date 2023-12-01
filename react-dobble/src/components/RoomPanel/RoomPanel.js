@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { socket } from '../../socket';
 
-const RoomPanel = ({ socket }) => {
+export function RoomPanel() {
   const [playerName, setPlayerName] = useState('');
   const [roomName, setRoomName] = useState('');
 
@@ -52,5 +53,3 @@ const RoomPanel = ({ socket }) => {
     </div>
   );
 };
-
-export default RoomPanel;

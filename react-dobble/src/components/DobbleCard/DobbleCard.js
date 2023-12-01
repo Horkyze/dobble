@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './DobbleCard.css';
+import { socket } from '../../socket';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faClock,
@@ -11,7 +12,7 @@ import {
   // ...import other icons you need
 } from '@fortawesome/free-solid-svg-icons';
 
-const DobbleCard = ({ socket }) => {
+export function DobbleCard() {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
   // Array of FontAwesome icons
@@ -46,5 +47,3 @@ const DobbleCard = ({ socket }) => {
     </div>
   );
 };
-
-export default DobbleCard;
